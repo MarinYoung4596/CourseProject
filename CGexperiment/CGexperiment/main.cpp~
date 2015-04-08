@@ -1,0 +1,23 @@
+#include <windows.h>
+#include <GL/glut.h>
+#include "CGexperiment.h"
+
+void init(void)
+{
+    glClearColor(1.0,1.0,1.0,0.0);
+    glMatrixMode(GL_PROJECTION);
+    gluOrtho2D(0.0,200.0,0.0,150.0);
+}
+int main(int argc, char *argv[])
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_RGBA | GLUT_SINGLE);
+    glutInitWindowPosition(-1, -1);
+    glutInitWindowSize(700, 700);
+    glutCreateWindow ("Computer Graphics experiment--code by marinyoung");
+
+    init();
+    glutDisplayFunc(menu);
+    glutMainLoop();
+    return 0;
+}
